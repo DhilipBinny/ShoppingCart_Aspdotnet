@@ -1,22 +1,77 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MyPurchases";
 }
 
-<!DOCTYPE html>
-<html>
-<h1>My Purchases</h1>
+@model S_cart.Models.Purchase
+@using S_cart.Models;
 
-<body>
-    <table>
-        <tr>
-            <td rowspan=3>Image</td>
+
+@{
+    <table align="center" cellpadding="15" style="text-align:center">
+        @*<tr align="center" style="text-align:center; font-size:large">
+            <td>Image</td>
             <td>Purchased On:</td>
         </tr>
         <tr>
+            <td>Product Name</td>
             <td>Quantity:</td>
         </tr>
         <tr>
+            <td>Product Description</td>
             <td>Activation Code:</td>
-        </tr>
+        </tr>*@
+
+        @foreach (Purchase item in ViewBag.list)
+        {
+            <tbody class="grey">
+                <tr align="center" style="text-align:center; font-size:large">
+                    <td><img src="@item.image" height="200" width="200" /></td>
+                    <td>Purchased On:</td>
+                    <td>@item.purchasedate</td>
+                </tr>
+            </tbody>
+            <tbody class="blue">
+                <tr>
+                    <td>@item.product_name</td>
+                    <td>Quantity:</td>
+                    <td>@item.quantity</td>
+                </tr>
+                <tr>
+                    <td>@item.productdesc</td>
+                    <td>Activation code:</td>
+                    <td>[Activation code]</td>
+                </tr>
+            </tbody>
+        }
     </table>
-</body>
+
+    @*foreach (product item in ViewBag.list)
+    {
+        <div class="grid-container">
+            <div>
+                <img src="@item.url" height="200" width="200" />
+                <div>
+                    <span>@item.name</span><br />
+                    <span>@item.description</span>
+                </div>
+                <div>@item.price $ </div>
+            </div>
+        </div>
+    }*@
+}
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 5px;
+        }
+</style>
+
