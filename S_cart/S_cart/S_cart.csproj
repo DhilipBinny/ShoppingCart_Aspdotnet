@@ -193,7 +193,7 @@
     <Content Include="Views\MyPurchases\MyPurchases.cshtml" />
     <Content Include="Views\ViewCart\ViewCart.cshtml" />
     <Content Include="Views\Shared\_LayoutforLogin.cshtml" />
-    <Content Include="Views\Shared\_Greeting.cshtml" />
+    <Content Include="Views\Shared\PartialViews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,11 +11,14 @@ namespace S_cart.Controllers
     {
         // GET: Gallery
         
-        public ActionResult Search()
+        public ActionResult Search(string fname, string lname)
         {
             list_product_helper new_1 = new list_product_helper();
             List<product> L1 = new_1.list_products();
             ViewData["list"] = L1;
+
+            ViewData["user"] = fname + "" + lname;
+
 
             // Code for search method (if needed)
             return View();
