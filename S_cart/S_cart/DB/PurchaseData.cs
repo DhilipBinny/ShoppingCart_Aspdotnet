@@ -25,10 +25,11 @@ namespace S_cart.DB
             {
                 Purchase purc = new Purchase();
                 {
-                    //purc.product_name = (string)rdr["product_name"];
-                    //purc.unit_price = (int)rdr["unit_price"];
-                    //purc.product_description = (string)rdr["product_description"];
-                    //purc.image = (string)rdr["image_url"];
+                    purc.productid = (int)rdr["product_id"];
+                    purc.quantity = (int)rdr["Quantity"];
+                    purc.product_name = (string)rdr["product_name"];
+                    purc.image = (string)rdr["image_url"];
+                    purc.productdesc = (string)rdr["product_description"];
 
 
                 }
