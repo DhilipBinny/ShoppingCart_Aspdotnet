@@ -34,9 +34,10 @@ li {
         }*/
 
 table {
-    border: 0; 
+    border: 0;
     line-height: 1.8;
     font-family: 'verdana';
+    background: white;
 }
 
 input[type=submit] {
@@ -44,6 +45,20 @@ input[type=submit] {
     color: white;
     background: #117A65;
 }
+
+.button {
+    width: 100px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+
+    
+
+
 
 
 
