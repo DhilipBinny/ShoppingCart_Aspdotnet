@@ -14,7 +14,7 @@ namespace S_cart.Models
         {
             List<product> L1 = new List<product>();
 
-            using (SqlConnection conn = new SqlConnection("Server=DESKTOP-BINNY;" + "Database=ca_SHOPPING;" + "Integrated Security=true"))
+            using (SqlConnection conn = new SqlConnection("Server=DELL;" + "Database=ca_SHOPPING;" + "Integrated Security=true"))
             {
                 conn.Open();
 

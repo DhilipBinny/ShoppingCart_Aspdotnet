@@ -38,7 +38,7 @@ namespace S_cart.Controllers
 
             //Start new session
             string sessionId = SessionData.CreateSession(user.Id);
-            return RedirectToAction("Search", "Gallery", new { sessionId });
+            return RedirectToAction("Search", "Gallery", new { ses_id=sessionId, fname = user.FirstName, lname = user.LastName });
         }
 
         [HttpPost]     

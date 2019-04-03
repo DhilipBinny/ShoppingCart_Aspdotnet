@@ -16,7 +16,7 @@ namespace S_cart.DB
         public static User GetUserByUsername(string username)
         {
             User user = new User();
-            //string connectionString = "Server=DESKTOP-BINNY;" + "Database=ca_SHOPPING;" + "Integrated Security=true";
+            //string connectionString = "Server=DELL;" + "Database=ca_SHOPPING;" + "Integrated Security=true";
             using (SqlConnection conn = new SqlConnection(Data.connectionString))
             {
                 conn.Open();
