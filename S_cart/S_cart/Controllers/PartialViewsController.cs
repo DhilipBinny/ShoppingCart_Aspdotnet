@@ -15,20 +15,23 @@ namespace S_cart.Controllers
             return View();
         }
 
-        public ActionResult PartialViews(string page)
+        public ActionResult PartialViews(string page, string fname, string lname)
         {
-            //initializing a User object and setting values - to be used in layout page
-            User user = new User();
-            user.Id = 1;
-            user.FirstName = "first name"; //need to call method from UserData
-            user.LastName = "last name";
-            user.Username = "username";
-            user.Password = "password";
-            user.SessionId = "123";
-            ViewData["user"] = user;
+            ////initializing a User object and setting values - test data
+            //User user = new User();
+            //user.Id = 1;
+            //user.FirstName = "first name"; 
+            //user.LastName = "last name";
+            //user.Username = "username"; 
+            //user.Password = "password";
+            //user.SessionId = "123";
+            //ViewData["first"] = (string)user.FirstName;
+            //ViewData["last"] = (string)user.LastName;
+
+            ViewData["user"] = fname + " " + lname;
 
             //using ViewData, pass the object with parameter to view
-            
+
             ViewData["type"] = page; 
             return View();
         }

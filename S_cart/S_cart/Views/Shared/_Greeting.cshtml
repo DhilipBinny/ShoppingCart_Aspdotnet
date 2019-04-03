@@ -1,0 +1,15 @@
+﻿@using S_cart.Models;
+
+@{
+    User user = (User)ViewData["user"];
+    string type = (string)ViewData["type"];
+    string firstname = (string)ViewData["first"];
+    string lastname = (string)ViewData["last"];
+    string name = (string)ViewData["user"];
+}
+
+<body>
+    <table border="0" width="100%"> <tr> <td align="left" style="background-color:#7CC6B8; color:black; padding-left: 20px"> Welcome, @name  </td> </tr> </table>
+</body>
+
+

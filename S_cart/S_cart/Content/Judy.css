@@ -29,11 +29,12 @@ li {
         text-decoration: none;
     }
         
-        li a:hover {
+        /*li a:hover {
             background-color: #111;
-        }
+        }*/
 
 table {
+    border: 0; 
     line-height: 1.8;
     font-family: 'verdana';
 }
@@ -41,5 +42,8 @@ table {
 input[type=submit] {
     font-family: Verdana;
     color: white;
-    background: grey;
+    background: #117A65;
 }
+
+
+

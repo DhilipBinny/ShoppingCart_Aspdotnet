@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel=stylesheet href="~/Content/Judy.css" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+</head>
+
+<body>   
+        <ul>
+            <li>@Html.ActionLink("The .NET Shop", "Login", "Login", new { type = "login" }, new { })</li>
+        </ul>          
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - The .NET Shop</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+
