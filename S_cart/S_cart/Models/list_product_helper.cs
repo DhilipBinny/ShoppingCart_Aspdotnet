@@ -39,5 +39,5 @@ namespace S_cart.Models
                 return L1;
             }
         }
-        }
+    }
 }

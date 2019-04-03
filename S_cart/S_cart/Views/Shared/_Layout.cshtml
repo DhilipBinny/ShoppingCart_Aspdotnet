@@ -25,11 +25,12 @@
             <li>
                 <a href="@Url.Action("ViewCart", "ViewCart", new RouteValueDictionary (new { type = "viewcart" }))" title="View Cart" class="links">
                     <img alt="View Cart" src="@Url.Content("~/Images/shopping_cart_PNG4.png")" height="25">
+                    <span> <input size  ="1" type="text" id ="quantity"name="quantity" value="0"/> </span>
                 </a>
             </li>
         </ul>
 
-        <table border="0" width="100%"> <tr> <td align ="left" style="background-color:#7CC6B8; color:black; padding-left: 20px" > Welcome, User </td> </tr> </table>
+        <table border="0" width="100%"> <tr> <td align="left" style="background-color:#7CC6B8; color:black; padding-left: 20px"> Welcome, User </td> </tr> </table>
 
         //Request.QueryString gets parameter from URL
         var page = Request.QueryString["type"];

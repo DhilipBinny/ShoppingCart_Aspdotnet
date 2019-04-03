@@ -16,7 +16,7 @@ namespace S_cart.Controllers
             list_product_helper new_1 = new list_product_helper();
             List<product> L1 = new_1.list_products();
             ViewData["list"] = L1;
-                    
+
             // Code for search method (if needed)
             return View();
         }
