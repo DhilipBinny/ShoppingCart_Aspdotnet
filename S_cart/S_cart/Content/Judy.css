@@ -34,8 +34,10 @@ li {
         }
 
 table {
+    border: 0; 
     line-height: 1.8;
     font-family: 'verdana';
+
 }
 
 input[type=submit] {

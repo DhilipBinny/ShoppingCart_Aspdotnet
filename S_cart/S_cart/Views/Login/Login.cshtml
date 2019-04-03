@@ -1,4 +1,9 @@
-﻿@model S_cart.Models.Login
+﻿@{
+    Layout = "~/Views/Shared/_LayoutforLogin.cshtml";
+}
+
+
+@model S_cart.Models.Login
 
 @*Action Mtd (Login), Controller (Login)*@
 @using (Html.BeginForm("Login", "Login", FormMethod.Post))

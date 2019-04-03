@@ -19,7 +19,8 @@
     @{
         <ul>
             <li>@Html.ActionLink("The .NET Shop", "Index", "Home", new { type = "gallery" }, new { })</li>
-            <li>@Html.ActionLink("Logout", "Index", "Home", new { type = "login" }, new { })</li>
+            <li>@Html.ActionLink("Logout", "Login", "Login")</li>
+            @*<li>@Html.ActionLink("Logout", "Index", "Home", new { type = "login" }, new { })</li>*@
             <li>@Html.ActionLink("My Purchases", "MyPurchases", "MyPurchases", new { type = "mypurchases" }, new { })</li>
             <li>
                 <a href="@Url.Action("ViewCart", "ViewCart", new RouteValueDictionary (new { type = "viewcart" }))" title="View Cart" class="links">
@@ -28,29 +29,30 @@
             </li>
         </ul>
 
+        <table border="0" width="100%"> <tr> <td align ="left" style="background-color:#7CC6B8; color:black; padding-left: 20px" > Welcome, User </td> </tr> </table>
+
         //Request.QueryString gets parameter from URL
         var page = Request.QueryString["type"];
 
+        @*if (page == "login")
+            {
+                @Html.Partial("_Login")
+            }*@
 
-        if (page == "login")
-        {
-            @Html.Partial("_Login")
-        }
-
-        else if (page == "gallery")
+        if (page == "gallery")
         {
             @Html.Partial("_Gallery")
         }
 
         else if (page == "viewcart")
-            {
-                @Html.Partial("_ViewCart")
-            }
+        {
+            @Html.Partial("_ViewCart")
+        }
 
         else if (page == "mypurchases")
-            {
-                @Html.Partial("_MyPurchases")
-            }
+        {
+            @Html.Partial("_MyPurchases")
+        }
 
     }
 

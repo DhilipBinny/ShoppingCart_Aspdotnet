@@ -22,7 +22,7 @@ namespace S_cart.Controllers
             user.Id = 1;
             user.FirstName = "first name"; //need to call method from UserData
             user.LastName = "last name";
-            user.Username = "username";
+            user.Username = "username"; 
             user.Password = "password";
             user.SessionId = "123";
             ViewData["user"] = user;
