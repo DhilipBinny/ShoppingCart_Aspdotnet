@@ -9,6 +9,8 @@ namespace S_cart.DB
     // Handle all queries pertaining to Session
     public class SessionData : Data
     {
+        static string session_id;
+
         public static bool IsActiveSessionId(string sessionId)
         {
             
@@ -37,6 +39,8 @@ namespace S_cart.DB
                 cmd.ExecuteNonQuery();
             }
 
+            //Hack to save the session id, user must login to keep session id for use later
+            session_id = sessionId;
             return sessionId;
         }
 
@@ -51,6 +55,11 @@ namespace S_cart.DB
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public static string getSessionId()
+        {
+            return session_id;
         }
     }
 }

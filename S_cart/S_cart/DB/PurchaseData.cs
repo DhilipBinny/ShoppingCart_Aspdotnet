@@ -17,19 +17,19 @@ namespace S_cart.DB
         //Handle all queries relating to purchase
         public static List<Purchase> purchasesdb()
         {
+            string current_session_id = SessionData.getSessionId();
             List<Purchase> purchase1 = new List<Purchase>();
             
             //Instantiate the connection
             SqlConnection conn = new SqlConnection(WebConfigurationManager.ConnectionStrings["conn"].ConnectionString);
             conn.Open();
 
-            int userid = 1; //Need to amend
-            //string userid = @"select user_id from user_info where user_id = ['username']";
-
+            string userid_query = "select user_id from user_info where session_id = '" + current_session_id + "'";
+        
             //Instantiate a new command with a query and connection
             string cmdtext = @"select c.user_id, p.product_id, count(p.product_id) as Quantity, p.product_name,p.image_url, p.product_description, c.date_time, c.activation_code" +
                                             " from cart_info c join product_info p on c.product_id = p.product_id" +
-                                            " where c.user_id = "+userid+" and c.status_code = 1" +
+                                            " where c.user_id = (" + userid_query + ") and c.status_code = 1" +
                                             " group by c.user_id, p.product_id, p.product_name, p.image_url, p.product_description, c.date_time, c.activation_code" +
                                             " order by c.user_id, p.product_id, p.product_name, p.image_url, p.product_description, c.date_time, c.activation_code";
             SqlCommand cmd = new SqlCommand(cmdtext, conn);

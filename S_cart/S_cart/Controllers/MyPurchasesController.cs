@@ -15,6 +15,7 @@ namespace S_cart.Controllers
         // GET: MyPurchases
         public ActionResult MyPurchases()
         {
+            // Find session id here
             //Storing query result in purchase1
             List<Purchase> purchase1 = PurchaseData.purchasesdb();
             //Storing key-value pair with key as "list", value as purchase1
