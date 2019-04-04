@@ -8,13 +8,29 @@
 @model S_cart.Models.product
 @using S_cart.Models;
 @*@{
-    string u1 = (string)ViewData["user"];
-}*@
+        string u1 = (string)ViewData["user"];
+    }*@
 
 @*<div><h3>Welcome @u1</h3></div>*@
 
 
 @{
+
+    foreach (product item in ViewBag.list)
+    {
+        <div class="productlist">
+            <div class="productimage"> <img src="@item.url" height="200" width="200" /></div>
+            <form class="products">
+                <div class="formdescription">
+                    <span><input type="hidden" name="productid" value="@item.product_id" /><br /></span>
+                    <span><input type="text" name="productname" value="@item.name" /><br /></span>
+                    <span><textarea name="productdescription" rows="2" wrap="soft" cols="65" value="@item.description">@item.description</textarea><br /><br /></span>
+                    <span>$<input type="text" name="productprice" value="@item.price" /></span><br />
+                    <span><input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" /></span><br />
+                </div>
+            </form>
+        </div>
+    }
     @*<table align="center" cellpadding="15" style="text-align:center">
         <tr align="center" style="text-align:center; font-size:large">
             <th>
@@ -46,30 +62,30 @@
                         <span>Quantity</span>
                         <input type="number" value="1"/>
                     </td>*@
-                @*<td>
-                    <input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" />
-                </td>
-            </tr>
-        }
+    @*<td>
+                        <input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" />
+                    </td>
+                </tr>
+            }
 
-    </table>*@
+        </table>*@
 
     @*foreach (product item in ViewBag.list)
-    {
-        <div class="grid-container">
-            <div>
-                <img src="@item.url" height="200" width="200" />
+        {
+            <div class="grid-container">
                 <div>
-                    <span>@item.name</span><br />
-                    <span>@item.description</span>
+                    <img src="@item.url" height="200" width="200" />
+                    <div>
+                        <span>@item.name</span><br />
+                        <span>@item.description</span>
+                    </div>
+                    <div>@item.price $ </div>
                 </div>
-                <div>@item.price $ </div>
             </div>
-        </div>
-    }*@
-        
-            foreach (product item in ViewBag.list)
-            {
+        }*@
+
+    @*foreach (product item in ViewBag.list)
+        {
         <div class="item">
             <div class="image"> <img src="@item.url" height="200" width="200" /></div>
             <div class="description">
@@ -78,25 +94,25 @@
             </div>
             <div class="price"><b>$@item.price </b><br /></div>
             <div class="button"><button class="add_to_cart">Add To Cart</button></div>
-            
+
         </div>
-            }
+        }*@
 
-            }
-            @*<style>
-                .grid-container {
-                    display: grid;
-                    grid-template-columns: auto auto;
-                    grid-gap: 10px;
-                }
+}
+@*<style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 10px;
+        }
 
-                    .grid-container > div {
-                        background-color: rgba(255, 255, 255, 0.8);
-                        text-align: center;
-                        padding: 10px 0;
-                        font-size: 5px;
-                    }
-            </style>*@
+            .grid-container > div {
+                background-color: rgba(255, 255, 255, 0.8);
+                text-align: center;
+                padding: 10px 0;
+                font-size: 5px;
+            }
+    </style>*@
 
 
 
