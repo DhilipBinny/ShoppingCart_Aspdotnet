@@ -148,7 +148,7 @@ input[class*=add_to_cart] {
     margin-right: 50px;
 }
 
-/*.description {
+.description {
     width: 550px;
     height: auto;
     text-align: left;
@@ -158,7 +158,7 @@ input[class*=add_to_cart] {
     flex-direction: column;   
 }
 
-    /*.description span:last-child {
+.description span:last-child {
         font-weight: 300;
         margin-top: 8px;
         color: #86939E;

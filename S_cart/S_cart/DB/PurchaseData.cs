@@ -23,7 +23,7 @@ namespace S_cart.DB
             SqlConnection conn = new SqlConnection(WebConfigurationManager.ConnectionStrings["conn"].ConnectionString);
             conn.Open();
 
-            int userid = 1;
+            int userid = 1; //Need to amend
             //string userid = @"select user_id from user_info where user_id = ['username']";
 
             //Instantiate a new command with a query and connection
