@@ -13,5 +13,6 @@ namespace S_cart.Models
         public string image { get; set; }
         public string productdesc { get; set; }
         public string purchasedate { get; set; }
+        public string activationcode { get; set; }
     }
 }

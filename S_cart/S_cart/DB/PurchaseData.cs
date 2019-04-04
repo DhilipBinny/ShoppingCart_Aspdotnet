@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using S_cart.Models;
 using System.Web.Configuration;
 using System.Diagnostics;
+using S_cart.DB;
 
 namespace S_cart.DB
 {
@@ -21,13 +22,16 @@ namespace S_cart.DB
             //Instantiate the connection
             SqlConnection conn = new SqlConnection(WebConfigurationManager.ConnectionStrings["conn"].ConnectionString);
             conn.Open();
-            
+
+            int userid = 1;
+            //string userid = @"select user_id from user_info where user_id = ['username']";
+
             //Instantiate a new command with a query and connection
-            string cmdtext = @"select p.product_id, count(p.product_id) as Quantity, p.product_name,p.image_url, p.product_description, c.date_time" +
+            string cmdtext = @"select c.user_id, p.product_id, count(p.product_id) as Quantity, p.product_name,p.image_url, p.product_description, c.date_time, c.activation_code" +
                                             " from cart_info c join product_info p on c.product_id = p.product_id" +
-                                            " where c.status_code = 1" +
-                                            " group by c.date_time, p.product_id, p.product_name, p.image_url, p.unit_price, p.product_description" +
-                                            " order by c.date_time, p.product_id, p.product_name, p.image_url, p.unit_price, p.product_description";
+                                            " where c.user_id = "+userid+" and c.status_code = 1" +
+                                            " group by c.user_id, p.product_id, p.product_name, p.image_url, p.product_description, c.date_time, c.activation_code" +
+                                            " order by c.user_id, p.product_id, p.product_name, p.image_url, p.product_description, c.date_time, c.activation_code";
             SqlCommand cmd = new SqlCommand(cmdtext, conn);
 
             //Call Execute reader to get query results
@@ -44,6 +48,7 @@ namespace S_cart.DB
                     purc.image = (string)sdr["image_url"];
                     purc.productdesc = (string)sdr["product_description"];
                     purc.purchasedate = (string)sdr["date_time"];
+                    purc.activationcode = (string)sdr["activation_code"];
                 }
                 purchase1.Add(purc);
                 Debug.WriteLine(sdr["product_id"]);
