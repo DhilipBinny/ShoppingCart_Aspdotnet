@@ -1,4 +1,5 @@
-﻿using System;
+﻿using S_cart.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,10 +21,11 @@ namespace S_cart.Controllers
             return View();
         }
 
-        public ActionResult Logout()
+        public ActionResult Logout(string sessionId)
         {
             // Code for logout
-            return View();
+            SessionData.RemoveSession(sessionId);
+            return RedirectToAction("Login", "Login");
         }
 
         public ActionResult Index()

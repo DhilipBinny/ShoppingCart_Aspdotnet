@@ -2,6 +2,8 @@
 @{
     /**/
 
+    /**/
+
     ViewBag.Title = "Search";
 }
 
@@ -16,8 +18,47 @@
 
 @{
 
-    foreach (product item in ViewBag.list)
-    {
+
+foreach (product item in ViewBag.list)
+{
+<div class="row">
+    <div class="column">
+        <div class="productlist1">
+            <div class="productimage1"> <img src="@item.url" height="200" width="200" /></div>
+            <span><input type="hidden" name="productid" value="@item.product_id" /><br /></span>
+            <span><input type="text" name="productname1" value="@item.name" /><br /></span>
+            <span><textarea name="productdescription" rows="2" wrap="soft" cols="65" value="@item.description">@item.description</textarea><br /><br /></span>
+            <span>$<input type="text" name="productprice" value="@item.price" /></span><br />
+            <span><input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" /></span><br />
+        </div>
+    </div>
+    <div class="column">
+        <div class="productlist1">
+            <div class="productimage1"> <img src="@item.url" height="200" width="200" /></div>
+            <span><input type="hidden" name="productid" value="@item.product_id" /><br /></span>
+            <span><input type="text" name="productname1" value="@item.name" /><br /></span>
+            <span><textarea name="productdescription" rows="2" wrap="soft" cols="65" value="@item.description">@item.description</textarea><br /><br /></span>
+            <span>$<input type="text" name="productprice" value="@item.price" /></span><br />
+            <span><input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" /></span><br />
+        </div>
+    </div>
+    <div class="column">
+        <div class="productlist1">
+            <div class="productimage1"> <img src="@item.url" height="200" width="200" /></div>
+            <span><input type="hidden" name="productid" value="@item.product_id" /><br /></span>
+            <span><input type="text" name="productname1" value="@item.name" /><br /></span>
+            <span><textarea name="productdescription" rows="2" wrap="soft" cols="65" value="@item.description">@item.description</textarea><br /><br /></span>
+            <span>$<input type="text" name="productprice" value="@item.price" /></span><br />
+            <span><input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" /></span><br />
+        </div>
+    </div>
+</div>
+}
+
+    
+
+        foreach (product item in ViewBag.list)
+        {
         <div class="productlist">
             <div class="productimage"> <img src="@item.url" height="200" width="200" /></div>
             <form class="products">
@@ -30,89 +71,89 @@
                 </div>
             </form>
         </div>
-    }
-    @*<table align="center" cellpadding="15" style="text-align:center">
-        <tr align="center" style="text-align:center; font-size:large">
-            <th>
-                Product_id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Image
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Price
-            </th>
-        </tr>
-
-        @foreach (product item in ViewBag.list)
-        {
-            <tr>
-                <td>@item.product_id</td>
-                <td>@item.name</td>
-                <td><img src="@item.url" height="200" width="200" /></td>
-                <td>@item.description</td>
-                <td>@item.price</td>
-                @*<td>
-                        <span>Quantity</span>
-                        <input type="number" value="1"/>
-                    </td>*@
-    @*<td>
-                        <input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" />
-                    </td>
-                </tr>
-            }
-
-        </table>*@
-
-    @*foreach (product item in ViewBag.list)
-        {
-            <div class="grid-container">
-                <div>
-                    <img src="@item.url" height="200" width="200" />
-                    <div>
-                        <span>@item.name</span><br />
-                        <span>@item.description</span>
-                    </div>
-                    <div>@item.price $ </div>
-                </div>
-            </div>
-        }*@
-
-    @*foreach (product item in ViewBag.list)
-        {
-        <div class="item">
-            <div class="image"> <img src="@item.url" height="200" width="200" /></div>
-            <div class="description">
-                <span><b>@item.name </b><br /></span>
-                <span><em>@item.description</em><br /></span>
-            </div>
-            <div class="price"><b>$@item.price </b><br /></div>
-            <div class="button"><button class="add_to_cart">Add To Cart</button></div>
-
-        </div>
-        }*@
-
-}
-@*<style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-gap: 10px;
         }
+        @*<table align="center" cellpadding="15" style="text-align:center">
+            <tr align="center" style="text-align:center; font-size:large">
+                <th>
+                    Product_id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
 
-            .grid-container > div {
-                background-color: rgba(255, 255, 255, 0.8);
-                text-align: center;
-                padding: 10px 0;
-                font-size: 5px;
-            }
-    </style>*@
+            @foreach (product item in ViewBag.list)
+            {
+                <tr>
+                    <td>@item.product_id</td>
+                    <td>@item.name</td>
+                    <td><img src="@item.url" height="200" width="200" /></td>
+                    <td>@item.description</td>
+                    <td>@item.price</td>
+                    @*<td>
+                            <span>Quantity</span>
+                            <input type="number" value="1"/>
+                        </td>*@
+        @*<td>
+                            <input type="submit" value="ADD TO CART" id="@item.product_id" class="add_to_cart" />
+                        </td>
+                    </tr>
+                }
+
+            </table>*@
+
+        @*foreach (product item in ViewBag.list)
+            {
+                <div class="grid-container">
+                    <div>
+                        <img src="@item.url" height="200" width="200" />
+                        <div>
+                            <span>@item.name</span><br />
+                            <span>@item.description</span>
+                        </div>
+                        <div>@item.price $ </div>
+                    </div>
+                </div>
+            }*@
+
+        @*foreach (product item in ViewBag.list)
+            {
+            <div class="item">
+                <div class="image"> <img src="@item.url" height="200" width="200" /></div>
+                <div class="description">
+                    <span><b>@item.name </b><br /></span>
+                    <span><em>@item.description</em><br /></span>
+                </div>
+                <div class="price"><b>$@item.price </b><br /></div>
+                <div class="button"><button class="add_to_cart">Add To Cart</button></div>
+
+            </div>
+            }*@
+
+        }
+        @*<style>
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-gap: 10px;
+                }
+
+                    .grid-container > div {
+                        background-color: rgba(255, 255, 255, 0.8);
+                        text-align: center;
+                        padding: 10px 0;
+                        font-size: 5px;
+                    }
+            </style>*@
 
 
 
