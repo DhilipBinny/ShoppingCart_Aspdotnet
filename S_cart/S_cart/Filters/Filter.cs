@@ -5,7 +5,7 @@ using System.Web;
 
 namespace S_cart.Filters
 {
-    public class Fliter
+    public class Filter
     {
         //filter method, if needed
     }

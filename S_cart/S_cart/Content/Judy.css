@@ -65,7 +65,18 @@ input[type=submit] {
     display: flex;
 }
 
-.productimage {
+.productlist1 {
+    width: 60%;
+    height: 250px;
+    margin: 80px auto;
+    background: #FFFFFF;
+    box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+    .productimage {
     margin-left: 80px;
     margin-right: 50px;
 }

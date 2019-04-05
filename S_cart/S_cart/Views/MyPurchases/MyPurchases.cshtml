@@ -24,12 +24,14 @@
 
 @foreach (Purchase item in ViewBag.list)
 {
-<div class="productlist">
+<div class="productlist1">
     <div class="productimage"> <img src="@item.image" height="200" width="200" /></div>
+    <span><input type="hidden" name="productid" value="@item.productid" /></span><br />
+    <span><input type="text" name="productname" value="@item.product_name" /></span><br />
 
     <div class="formdescription">
-        <span><input type="hidden" name="productid" value="@item.productid" /><br /></span>
-        <span><input type="text" name="productname" value="@item.product_name" /><br /></span>
+        @*<span><input type="hidden" name="productid" value="@item.productid" /><br /></span>
+        <span><input type="text" name="productname" value="@item.product_name" /><br /></span>*@
         <span><textarea name="productdescription" rows="2" wrap="soft" cols="65" value="@item.productdesc">@item.productdesc</textarea><br /><br /></span>
         <span>Purchased on: <input type="text" name="purchasedate" value="@item.purchasedate" /></span><br />
         <span>Quantity: <input type="text" name="quantity" value="@item.quantity" /></span><br />
